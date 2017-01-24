@@ -1,0 +1,11 @@
+ext {
+    applicationId = "ru.amm.roboart"
+    versionCode = 101
+    versionName = "0.1.1"
+    buildToolsVersion = "25.0.0"
+    minSdkVersion = 16
+    targetSdkVersion = 25
+    compileSdkVersion = 25
+    debugVersionNameSuffix = ""
+    releaseVersionNameSuffix = ""
+}

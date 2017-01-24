@@ -1,30 +1,91 @@
 apply plugin: 'com.android.application'
 
+apply plugin: 'com.neenbedankt.android-apt'
+apply plugin: 'me.tatarka.retrolambda'
+
 android {
-    compileSdkVersion 25
-    buildToolsVersion "25.0.0"
+
+    def config = rootProject.extensions.getByName("ext")
+
+    compileSdkVersion config["compileSdkVersion"]
+    buildToolsVersion config["buildToolsVersion"]
+
     defaultConfig {
-        applicationId "ru.amm.roboart"
-        minSdkVersion 16
-        targetSdkVersion 25
-        versionCode 1
-        versionName "1.0"
+        applicationId config["applicationId"]
+        minSdkVersion config["minSdkVersion"]
+        targetSdkVersion config["targetSdkVersion"]
+        versionCode config["versionCode"]
+        versionName config["versionName"]
+
+
+        vectorDrawables.useSupportLibrary = true
+        setProperty("archivesBaseName", "RoboartAndroid-$versionName-($versionCode)")
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
     }
+
     buildTypes {
         release {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+
+    //noinspection GroovyAssignabilityCheck
+    sourceSets {
+        //noinspection GroovyAssignabilityCheck
+        main {
+            res.srcDirs += 'src/main/res-main'
+            file('src/main/res-screen')
+                    .listFiles()
+                    .each { res.srcDirs += it.path }
+        }
+    }
+
+    packagingOptions {
+        exclude 'META-INF/rxjava.properties'
+    }
 }
 
 dependencies {
+    def appcompatVersion = '25.1.0'
+    def retrofitVersion = '2.1.0'
+    def okHttpVersion = '3.5.0'
+    def daggerVersion = '2.6.1'
+    def lombokVersion = '1.16.12'
+
+    //apt
+    apt "com.google.dagger:dagger-compiler:${daggerVersion}"
+    apt "org.projectlombok:lombok:${lombokVersion}"
+
+    //provided
+    provided "org.projectlombok:lombok:${lombokVersion}"
+    provided "javax.annotation:jsr250-api:1.0"
+
     compile fileTree(dir: 'libs', include: ['*.jar'])
     androidTestCompile('com.android.support.test.espresso:espresso-core:2.2.2', {
         exclude group: 'com.android.support', module: 'support-annotations'
     })
-    compile 'com.android.support:appcompat-v7:25.1.0'
-    compile 'com.android.support:design:25.1.0'
+    compile "com.android.support:appcompat-v7:${appcompatVersion}"
+    compile "com.android.support:design:${appcompatVersion}"
+    compile "com.google.dagger:dagger:${daggerVersion}"
+    compile "com.agna.ferro:ferro-mvp-rx:1.0.2"
+    compile 'io.reactivex.rxjava2:rxjava:2.0.4'
+    compile "io.reactivex:rxandroid:1.2.1"
+    compile "com.github.bumptech.glide:glide:3.7.0"
+
+    //network
+    compile "com.squareup.retrofit2:retrofit:${retrofitVersion}"
+    compile "com.squareup.retrofit2:adapter-rxjava:${retrofitVersion}"
+    compile "com.squareup.retrofit2:converter-gson:${retrofitVersion}"
+    compile "com.squareup.okhttp3:logging-interceptor:${okHttpVersion}"
+    compile "com.google.code.gson:gson:2.8.0"
+
+    compile "com.jakewharton.timber:timber:4.1.2"
+
     testCompile 'junit:junit:4.12'
 }
