@@ -1,0 +1,14 @@
+*.iml
+.gradle
+/local.properties
+/.idea/workspace.xml
+/.idea/libraries
+.DS_Store
+/build
+/captures
+
+# Exclude IntelliJ files, they will be recreated from the build files.
+.idea/*
+# But keep dictionaries to have less false positives in spellcheck inspection.
+!.idea/dictionaries
+
