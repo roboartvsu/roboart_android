@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="maps_description_screen">Вы можете построить маршрут до места проведения мероприятия или воспользоваться картами помещениями</string>
+    <string name="maps_build_road">Проложить маршрут</string>
+    <string name="maps_room">Карты помещения</string>
+</resources>

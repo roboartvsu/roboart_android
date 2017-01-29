@@ -6,4 +6,12 @@
     <dimen name="activity_horizontal_margin">16dp</dimen>
     <dimen name="activity_vertical_margin">16dp</dimen>
     <dimen name="fab_margin">16dp</dimen>
+
+    <dimen name="base_horizontal_offset">24dp</dimen>
+    <dimen name="base_vertical_offset">20dp</dimen>
+
+    <dimen name="abc_button_padding_horizontal">8dp</dimen>
+    <dimen name="abc_button_padding_vertical">4dp</dimen>
+    <dimen name="abc_button_inset_vertical">6dp</dimen>
+    <dimen name="abc_button_inset_horizontal">4dp</dimen>
 </resources>

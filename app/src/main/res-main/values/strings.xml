@@ -11,5 +11,4 @@
     <string name="bad_response_error_message">Неверный ответ сервера</string>
     <string name="unexpected_error_error_message">Непредвиденная ошибка</string>
     <string name="server_error_message">Ведутся технические работы, сервис будет доступен в течение 15-ти минут. Приносим извинения за доставленные неудобства.</string>
-
 </resources>
