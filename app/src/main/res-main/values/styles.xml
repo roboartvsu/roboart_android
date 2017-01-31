@@ -10,6 +10,9 @@
         <item name="drawerArrowStyle">@style/DrawerArrowStyle</item>
     </style>
 
+    <style name="SplashTheme" parent="AppTheme">
+        <item name="android:windowBackground">@drawable/bg_intro_screen</item>
+    </style>
 
     <style name="Widget.AppCompat.Button.Primary">
         <item name="android:background">@drawable/selector_primary_button</item>

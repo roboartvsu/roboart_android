@@ -7,6 +7,7 @@ import com.agna.ferro.mvp.component.scope.PerApplication;
 import dagger.Component;
 import ru.amm.roboart.interactor.common.network.NetworkModule;
 import ru.amm.roboart.interactor.common.scheduler.SchedulerModule;
+import ru.amm.roboart.interactor.common.scheduler.SchedulersProvider;
 
 @PerApplication
 @Component(modules = {
@@ -15,4 +16,6 @@ import ru.amm.roboart.interactor.common.scheduler.SchedulerModule;
         SchedulerModule.class})
 public interface AppComponent {
     Context context();
+
+    SchedulersProvider schedulerProvider();
 }
