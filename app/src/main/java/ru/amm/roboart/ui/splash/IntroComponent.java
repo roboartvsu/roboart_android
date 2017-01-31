@@ -1,4 +1,4 @@
-package ru.amm.roboart.ui.intro;
+package ru.amm.roboart.ui.splash;
 
 import com.agna.ferro.mvp.component.ScreenComponent;
 import com.agna.ferro.mvp.component.scope.PerScreen;
@@ -9,5 +9,5 @@ import ru.amm.roboart.ui.base.activity.ActivityViewModule;
 
 @PerScreen
 @Component(dependencies = AppComponent.class, modules = ActivityViewModule.class)
-public interface IntroComponent extends ScreenComponent<IntroActivity> {
+public interface IntroComponent extends ScreenComponent<SplashActivity> {
 }

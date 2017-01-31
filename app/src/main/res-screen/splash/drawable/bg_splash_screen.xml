@@ -2,9 +2,9 @@
 <layer-list xmlns:android="http://schemas.android.com/apk/res/android">
     <item android:drawable="@color/colorPrimary" />
 
-    <item android:top="80dp">
+    <item android:gravity="center">
         <bitmap
-            android:gravity="top"
+            android:gravity="center"
             android:src="@drawable/roboart_logo" />
     </item>
 </layer-list>

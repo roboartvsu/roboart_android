@@ -11,7 +11,7 @@
     </style>
 
     <style name="SplashTheme" parent="AppTheme">
-        <item name="android:windowBackground">@drawable/bg_intro_screen</item>
+        <item name="android:windowBackground">@drawable/bg_splash_screen</item>
     </style>
 
     <style name="Widget.AppCompat.Button.Primary">

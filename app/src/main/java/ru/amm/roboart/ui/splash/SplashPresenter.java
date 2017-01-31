@@ -1,4 +1,4 @@
-package ru.amm.roboart.ui.intro;
+package ru.amm.roboart.ui.splash;
 
 import com.agna.ferro.mvp.component.scope.PerScreen;
 
@@ -10,10 +10,10 @@ import ru.amm.roboart.ui.common.error.ErrorHandler;
 
 
 @PerScreen
-public class IntroPresenter extends BasePresenter<IntroActivity> {
+public class SplashPresenter extends BasePresenter<SplashActivity> {
 
     @Inject
-    public IntroPresenter(SchedulersProvider schedulersProvider, ErrorHandler errorHandler) {
+    public SplashPresenter(SchedulersProvider schedulersProvider, ErrorHandler errorHandler) {
         super(schedulersProvider, errorHandler);
     }
 }
