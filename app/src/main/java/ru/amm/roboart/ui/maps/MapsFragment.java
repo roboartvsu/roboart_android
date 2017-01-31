@@ -16,7 +16,7 @@ public class MapsFragment extends Fragment {
 
     public static final double VENUE_LAT = 51.656636;
     public static final double VENUE_LNG = 39.206005;
-
+    
     public static MapsFragment newInstance() {
         return new MapsFragment();
     }
@@ -28,6 +28,7 @@ public class MapsFragment extends Fragment {
 
         Button buildRoad = (Button) view.findViewById(R.id.fragment_maps_build_road_btn);
         buildRoad.setOnClickListener(view1 -> buildRoadToVenue());
+
         return view;
     }
 

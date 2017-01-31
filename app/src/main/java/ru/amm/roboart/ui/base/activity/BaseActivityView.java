@@ -9,6 +9,7 @@ import com.agna.ferro.mvp.view.activity.MvpActivityView;
 import java.util.HashSet;
 import java.util.Set;
 
+import io.objectbox.BoxStore;
 import ru.amm.roboart.app.App;
 import ru.amm.roboart.app.dagger.AppComponent;
 import ru.amm.roboart.ui.base.SupportProxies;
@@ -37,6 +38,10 @@ public abstract class BaseActivityView extends MvpActivityView implements Suppor
         for (ActivityResultProxy activityResultProxy : activityResultProxies) {
             activityResultProxy.handleIntent(requestCode, resultCode, data);
         }
+    }
+
+    public BoxStore getBoxStrore() {
+        return ((App) getApplication()).getBoxStore();
     }
 
     @Override
@@ -89,4 +94,6 @@ public abstract class BaseActivityView extends MvpActivityView implements Suppor
     public void registerRequestPermissionProxy(RequestPermissionProxy requestPermissionProxy) {
         this.requestPermissionProxies.add(requestPermissionProxy);
     }
+
+
 }

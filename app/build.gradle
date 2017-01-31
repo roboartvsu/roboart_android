@@ -2,6 +2,7 @@ apply plugin: 'com.android.application'
 
 apply plugin: 'com.neenbedankt.android-apt'
 apply plugin: 'me.tatarka.retrolambda'
+apply plugin: 'io.objectbox'
 
 android {
 
@@ -86,6 +87,9 @@ dependencies {
     compile "com.google.code.gson:gson:2.8.0"
 
     compile "com.jakewharton.timber:timber:4.1.2"
+
+    //data base
+    compile 'io.objectbox:objectbox-android:0.9.6'
 
     testCompile 'junit:junit:4.12'
 }
