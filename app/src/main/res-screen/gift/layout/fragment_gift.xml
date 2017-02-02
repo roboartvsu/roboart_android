@@ -1,6 +1,31 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical" android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center"
+    android:orientation="vertical">
 
+    <ImageView
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:src="@drawable/logo_big" />
+
+    <TextView
+        android:id="@+id/fragment_gift_info"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:padding="@dimen/base_horizontal_offset"
+        android:textColor="@color/black"
+        android:text="@string/gift_info_message"
+        android:textSize="16sp" />
+
+    <Button
+        android:id="@+id/fragment_gift_open_scheduler"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:paddingLeft="@dimen/base_horizontal_offset"
+        android:paddingRight="@dimen/base_horizontal_offset"
+        android:text="@string/gift_open_scheduler" />
 </LinearLayout>

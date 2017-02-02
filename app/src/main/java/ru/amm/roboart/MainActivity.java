@@ -10,8 +10,8 @@ import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
-import android.view.View;
 
+import ru.amm.roboart.ui.gift.GiftFragment;
 import ru.amm.roboart.ui.maps.MapsFragment;
 
 public class MainActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
@@ -53,6 +53,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         } else if (id == R.id.nav_maps) {
             fragment = MapsFragment.newInstance();
         } else if (id == R.id.nav_gift) {
+            fragment = GiftFragment.newInstance();
 
         } else if (id == R.id.nav_organizers) {
 
