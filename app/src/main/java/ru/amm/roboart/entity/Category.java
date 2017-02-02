@@ -1,4 +1,4 @@
-package ru.amm.roboart.interactor.common.scheduler.category;
+package ru.amm.roboart.entity;
 
 import com.google.gson.annotations.SerializedName;
 
