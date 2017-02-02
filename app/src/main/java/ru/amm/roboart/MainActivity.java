@@ -11,6 +11,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
 
+import ru.amm.roboart.ui.about.AboutFragment;
 import ru.amm.roboart.ui.gift.GiftFragment;
 import ru.amm.roboart.ui.maps.MapsFragment;
 
@@ -58,7 +59,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         } else if (id == R.id.nav_organizers) {
 
         } else if (id == R.id.nav_about) {
-
+            fragment = AboutFragment.newInstance();
         }
 
         openFragment(fragment);

@@ -16,6 +16,7 @@ android {
         targetSdkVersion config["targetSdkVersion"]
         versionCode config["versionCode"]
         versionName config["versionName"]
+        buildConfigField "long", "TIMESTAMP", System.currentTimeMillis() + "L"
 
 
         vectorDrawables.useSupportLibrary = true
