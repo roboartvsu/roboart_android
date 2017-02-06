@@ -25,7 +25,6 @@ public class MapsPresenter extends BasePresenter<MapsFragment> {
     public MapsPresenter(SchedulersProvider schedulersProvider, ErrorHandler errorHandler, MapsInteractor mapsInteractor) {
         super(schedulersProvider, errorHandler);
         this.mapsInteractor = mapsInteractor;
-        Timber.w("3452 maps " + mapsInteractor);
     }
 
     public void getMaps() {

@@ -41,6 +41,7 @@ public class MapsFragment extends BaseFragmentView {
         opentMapsBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                //TODO  вынести загрузку карт с api на сплеш
                 presenter.getMaps();
             }
         });

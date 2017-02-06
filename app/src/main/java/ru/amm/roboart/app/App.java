@@ -3,12 +3,10 @@ package ru.amm.roboart.app;
 import android.app.Application;
 import android.support.v7.app.AppCompatDelegate;
 
-import io.objectbox.BoxStore;
 import ru.amm.roboart.BuildConfig;
 import ru.amm.roboart.app.dagger.AppComponent;
 import ru.amm.roboart.app.dagger.AppModule;
 import ru.amm.roboart.app.dagger.DaggerAppComponent;
-import ru.amm.roboart.entity.MyObjectBox;
 import ru.amm.roboart.interactor.common.network.NetworkModule;
 import timber.log.Timber;
 
@@ -18,13 +16,10 @@ public class App extends Application {
 
     private AppComponent appComponent;
 
-    private BoxStore boxStore;
-
     @Override
     public void onCreate() {
         super.onCreate();
 
-        boxStore = MyObjectBox.builder().androidContext(App.this).build();
         AppCompatDelegate.setCompatVectorFromResourcesEnabled(true);
         initInjector();
         initLogging();
@@ -47,9 +42,5 @@ public class App extends Application {
 
     public AppComponent getAppComponent() {
         return this.appComponent;
-    }
-
-    public BoxStore getBoxStore() {
-        return boxStore;
     }
 }

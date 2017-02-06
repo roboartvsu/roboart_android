@@ -19,6 +19,6 @@ public class MapsInteractor {
     }
 
     public Observable<List<Maps>> getMaps(){
-       return mapsRepository.getMapsFromApi();
+       return mapsRepository.getMaps();
     }
 }
