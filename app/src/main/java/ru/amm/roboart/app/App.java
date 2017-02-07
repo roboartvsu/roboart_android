@@ -3,14 +3,13 @@ package ru.amm.roboart.app;
 import android.app.Application;
 import android.support.v7.app.AppCompatDelegate;
 
-import ru.amm.roboart.BuildConfig;
 import io.objectbox.BoxStore;
 import ru.amm.roboart.BuildConfig;
 import ru.amm.roboart.app.dagger.AppComponent;
 import ru.amm.roboart.app.dagger.AppModule;
 import ru.amm.roboart.app.dagger.DaggerAppComponent;
-import timber.log.Timber;
-import ru.amm.roboart.interactor.common.scheduler.category.MyObjectBox;
+import ru.amm.roboart.entity.MyObjectBox;
+import ru.amm.roboart.interactor.common.network.NetworkModule;
 import timber.log.Timber;
 
 public class App extends Application {

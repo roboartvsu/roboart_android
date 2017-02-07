@@ -2,16 +2,16 @@ package ru.amm.roboart.entity;
 
 import com.google.gson.annotations.SerializedName;
 
-import io.objectbox.BoxStore;
 import io.objectbox.annotation.Entity;
-import io.objectbox.annotation.Generated;
 import io.objectbox.annotation.Id;
 import io.objectbox.annotation.Relation;
+import io.objectbox.annotation.Generated;
+import io.objectbox.Box;
+import io.objectbox.BoxStore;
 import io.objectbox.annotation.apihint.Internal;
 import io.objectbox.exception.DbDetachedException;
-import io.objectbox.relation.ToOne;
-import io.objectbox.Box;
 import io.objectbox.exception.DbException;
+import io.objectbox.relation.ToOne;
 
 @Entity
 public class Scheduler {
@@ -44,13 +44,6 @@ public class Scheduler {
     @Generated(hash = 1307364262)
     transient BoxStore __boxStore;
 
-    @Internal
-    @Generated(hash = 2133608096)
-    private transient ToOne<Scheduler, Category> category__toOne;
-
-    public Scheduler() {
-    }
-
     @Generated(hash = 1478863993)
     public Scheduler(long id, String title, String description,
             String displayedTime, long startTime, long endTime, String location,
@@ -65,30 +58,34 @@ public class Scheduler {
         this.categoryId = categoryId;
     }
 
+    @Generated(hash = 1304051197)
+    public Scheduler() {
+    }
+
     public long getId() {
         return id;
-    }
-
-    public String getTitle() {
-        return title;
-    }
-
-    public String getDescription() {
-        return description;
     }
 
     public void setId(long id) {
         this.id = id;
     }
 
+    public String getTitle() {
+        return title;
+    }
+
     public void setTitle(String title) {
         this.title = title;
+    }
+
+    public String getDescription() {
+        return description;
     }
 
     public void setDescription(String description) {
         this.description = description;
     }
-    
+
     public String getDisplayedTime() {
         return displayedTime;
     }
@@ -121,15 +118,6 @@ public class Scheduler {
         this.location = location;
     }
 
-    @Override
-    public String toString() {
-        return "Scheduler{" +
-                "id=" + id +
-                ", title='" + title + '\'' +
-                ", description='" + description + '\'' +
-                '}';
-    }
-
     public long getCategoryId() {
         return categoryId;
     }
@@ -137,6 +125,10 @@ public class Scheduler {
     public void setCategoryId(long categoryId) {
         this.categoryId = categoryId;
     }
+
+    @Internal
+    @Generated(hash = 2133608096)
+    private transient ToOne<Scheduler, Category> category__toOne;
 
     /** See {@link io.objectbox.relation.ToOne} for details. */
     @Generated(hash = 1735742230)
@@ -185,4 +177,3 @@ public class Scheduler {
         __boxStore.boxFor(Scheduler.class).put(this);
     }
 }
-
