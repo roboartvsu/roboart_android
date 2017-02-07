@@ -15,6 +15,8 @@ import timber.log.Timber;
 
 public class App extends Application {
 
+    public static final String BASE_URL = "http://private-75095-roboart.apiary-mock.com/";
+
     private AppComponent appComponent;
 
     private BoxStore boxStore;
@@ -32,12 +34,13 @@ public class App extends Application {
     private void initInjector() {
         appComponent = DaggerAppComponent.builder()
                 .appModule(new AppModule(this))
+                .networkModule(new NetworkModule(this,BASE_URL))
                 .build();
     }
 
     private void initLogging() {
         if (BuildConfig.BUILD_TYPE.equals("debug")) {
-            Timber.plant(new Timber.DebugTree());
+            Timber.plant(new DebugTree());
         } else {
             //TODO log in crachlytics
         }

@@ -24,6 +24,7 @@
         android:text="@string/maps_build_road" />
 
     <Button
+        android:id="@+id/fragment_maps_open_maps_btn"
         style="@style/Widget.AppCompat.Button.Borderless.Primary"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"

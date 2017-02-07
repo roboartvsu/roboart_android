@@ -1,4 +1,4 @@
-package ru.amm.roboart.interactor.common.scheduler;
+package ru.amm.roboart.entity;
 
 import com.google.gson.annotations.SerializedName;
 
@@ -10,7 +10,8 @@ import io.objectbox.annotation.Relation;
 import io.objectbox.annotation.apihint.Internal;
 import io.objectbox.exception.DbDetachedException;
 import io.objectbox.relation.ToOne;
-import ru.amm.roboart.interactor.common.scheduler.category.Category;
+import io.objectbox.Box;
+import io.objectbox.exception.DbException;
 
 @Entity
 public class Scheduler {

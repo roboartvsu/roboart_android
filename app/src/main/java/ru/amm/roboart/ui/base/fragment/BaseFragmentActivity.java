@@ -1,10 +1,10 @@
-package ru.amm.roboart.ui.base.activity;
+package ru.amm.roboart.ui.base.fragment;
 
 import android.content.Intent;
+import android.os.Bundle;
 import android.support.annotation.NonNull;
-
-import com.agna.ferro.mvp.component.ScreenComponent;
-import com.agna.ferro.mvp.view.activity.MvpActivityView;
+import android.support.annotation.Nullable;
+import android.support.v7.app.AppCompatActivity;
 
 import java.util.HashSet;
 import java.util.Set;
@@ -17,18 +17,22 @@ import ru.amm.roboart.ui.base.proxy.proxy.NewIntentProxy;
 import ru.amm.roboart.ui.base.proxy.proxy.RequestPermissionProxy;
 
 /**
- * Базовый класс для View основанной на Activity
+ * базовый класс для Activity, которая является контейнером для Fragment
  */
-public abstract class BaseActivityView extends MvpActivityView implements SupportProxies {
+public class BaseFragmentActivity extends AppCompatActivity implements SupportProxies {
 
-    private final Set<ActivityResultProxy> activityResultProxies = new HashSet<>();
-    private final Set<NewIntentProxy> newIntentProxies = new HashSet<>();
-    private final Set<RequestPermissionProxy> requestPermissionProxies = new HashSet<>();
+    private Set<ActivityResultProxy> activityResultProxies = new HashSet<>();
+    private Set<NewIntentProxy> newIntentProxies = new HashSet<>();
+    private Set<RequestPermissionProxy> requestPermissionProxies = new HashSet<>();
 
-    public abstract BasePresenter getPresenter();
 
-    public AppComponent getAppComponent() {
+    protected AppComponent getAppComponent() {
         return ((App) getApplication()).getAppComponent();
+    }
+
+    @Override
+    protected void onCreate(@Nullable Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
     }
 
     @Override
@@ -55,17 +59,6 @@ public abstract class BaseActivityView extends MvpActivityView implements Suppor
         }
     }
 
-    public ActivityModule getActivityModule() {
-        return new ActivityModule(getPersistentScreenScope());
-    }
-
-    /**
-     * @return компонент экрана
-     */
-    public ScreenComponent getScreenComponent() {
-        return getPersistentScreenScope().getObject(ScreenComponent.class);
-    }
-
     /**
      * регистрирует прокси на события onActivityResult
      */
@@ -89,6 +82,4 @@ public abstract class BaseActivityView extends MvpActivityView implements Suppor
     public void registerRequestPermissionProxy(RequestPermissionProxy requestPermissionProxy) {
         this.requestPermissionProxies.add(requestPermissionProxy);
     }
-
-
 }
