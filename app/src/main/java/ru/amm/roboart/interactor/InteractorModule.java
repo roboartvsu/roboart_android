@@ -6,8 +6,10 @@ import dagger.Module;
 import dagger.Provides;
 import ru.amm.roboart.interactor.events.EventsInteractor;
 import ru.amm.roboart.interactor.maps.MapsInteractor;
+import ru.amm.roboart.interactor.organizers.OrganizersInteractor;
 import ru.amm.roboart.repository.event.EventsRepository;
 import ru.amm.roboart.repository.maps.MapsRepository;
+import ru.amm.roboart.repository.organizers.OrganizersRepository;
 
 @Module
 public class InteractorModule {
@@ -22,5 +24,11 @@ public class InteractorModule {
     @Provides
     MapsInteractor provideMapsInteractor(MapsRepository mapsRepository) {
         return new MapsInteractor(mapsRepository);
+    }
+
+    @PerApplication
+    @Provides
+    OrganizersInteractor provideOrganizersInteractor(OrganizersRepository organizersRepository) {
+        return new OrganizersInteractor(organizersRepository);
     }
 }
