@@ -4,19 +4,19 @@
     <group android:checkableBehavior="single">
         <item
             android:id="@+id/nav_scheduler"
-            android:icon="@drawable/ic_menu_camera"
+            android:icon="@drawable/icon_events_tab"
             android:title="Расписание" />
         <item
             android:id="@+id/nav_maps"
-            android:icon="@drawable/ic_menu_gallery"
+            android:icon="@drawable/icon_map_tab"
             android:title="Карты" />
         <item
             android:id="@+id/nav_organizers"
-            android:icon="@drawable/ic_menu_manage"
+            android:icon="@drawable/icon_organizers_tab"
             android:title="Организаторы" />
         <item
             android:id="@+id/nav_about"
-            android:icon="@drawable/ic_menu_manage"
+            android:icon="@drawable/icon_about_tab"
             android:title="О приложени" />
     </group>
 </menu>
