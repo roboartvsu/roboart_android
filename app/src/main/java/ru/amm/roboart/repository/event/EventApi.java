@@ -9,6 +9,6 @@ import rx.Observable;
 
 public interface EventApi {
 
-    @GET("event/list")
+    @GET("/event/list")
     Observable<List<Event>> getEvents(@Header("X-PRIVATE-KEY") String token);
 }

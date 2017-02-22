@@ -41,4 +41,8 @@ public class EventsRepository {
         }
     }
 
+    public Observable<Event> getEventForId(long id) throws SQLException {
+        return Observable.fromCallable(() -> eventDao.queryForId(id));
+    }
+
 }

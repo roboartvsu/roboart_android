@@ -21,7 +21,7 @@ import ru.amm.roboart.R;
 import ru.amm.roboart.model.event.Event;
 import ru.amm.roboart.ui.base.fragment.BaseFragmentView;
 import ru.amm.roboart.ui.base.recycler.DividerItemDecoration;
-import ru.amm.roboart.ui.base.recycler.RecyclerAdapter;
+import ru.amm.roboart.ui.events.detail.DetailEventActivity;
 import timber.log.Timber;
 
 public class EventsFragment extends BaseFragmentView {
@@ -55,12 +55,7 @@ public class EventsFragment extends BaseFragmentView {
 
         adapter = new EventsAdapter(getActivity());
         recyclerView.setAdapter(adapter);
-        adapter.setOnItemClickListener(new RecyclerAdapter.OnItemClickListener<Event>() {
-            @Override
-            public void onItemClick(View v, Event item) {
-
-            }
-        });
+        adapter.setOnItemClickListener((v, item) -> DetailEventActivity.start(getContext(), item.getId(), item.getTitle()));
         return view;
     }
 

@@ -21,4 +21,8 @@ public class EventsInteractor {
     public Observable<List<Event>> getEvents() throws SQLException {
         return eventsRepository.getEvents();
     }
+
+    public Observable<Event> getEventForId(long id) throws SQLException {
+        return eventsRepository.getEventForId(id);
+    }
 }

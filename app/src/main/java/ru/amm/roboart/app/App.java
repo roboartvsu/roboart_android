@@ -14,7 +14,7 @@ import timber.log.Timber;
 
 public class App extends Application {
 
-    public static final String BASE_URL = "http://139.59.157.166:8080/";
+    public static final String BASE_URL = "http://139.59.157.166:8080";
 
     private AppComponent appComponent;
 

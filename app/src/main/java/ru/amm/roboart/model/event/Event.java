@@ -43,6 +43,10 @@ public class Event {
     @DatabaseField
     private String location;
 
+    @Expose
+    @DatabaseField
+    private String map;
+
     public long getId() {
         return id;
     }
@@ -113,5 +117,9 @@ public class Event {
 
     public void setCategoryId(long categoryId) {
         this.categoryId = categoryId;
+    }
+
+    public String getMap() {
+        return map;
     }
 }

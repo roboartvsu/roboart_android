@@ -8,6 +8,6 @@ import rx.Observable;
 
 public interface MapsApi {
 
-    @GET("api/maps")
+    @GET("/maps")
     Observable<List<Maps>> getMaps();
 }
