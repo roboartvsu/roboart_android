@@ -103,6 +103,7 @@ public class DetailEventActivity extends BaseActivityView {
         }
 
         Glide.with(this).load(App.BASE_URL + event.getMap()).into(eventMap);
+        eventMap.setOnClickListener(v -> FullScreenEventMapActivity.start(DetailEventActivity.this, event.getMap(), event.getLocation()));
     }
 
     public void onErrorContentLoaded() {

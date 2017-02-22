@@ -29,6 +29,7 @@
             </intent-filter>
         </activity>
         <activity android:name=".ui.events.detail.DetailEventActivity" />
+        <activity android:name=".ui.events.detail.FullScreenEventMapActivity" />
     </application>
 
 </manifest>
