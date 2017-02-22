@@ -3,7 +3,7 @@ package ru.amm.roboart.model.organizers;
 import com.j256.ormlite.field.DatabaseField;
 import com.j256.ormlite.table.DatabaseTable;
 
-@DatabaseTable(tableName = "organizer", daoClass = Organizer.class)
+@DatabaseTable(tableName = "organizer", daoClass = OrganizersDao.class)
 public class Organizer {
 
     @DatabaseField(id = true)

@@ -12,6 +12,7 @@ import java.sql.SQLException;
 import ru.amm.roboart.model.event.Category;
 import ru.amm.roboart.model.event.Event;
 import ru.amm.roboart.model.map.Maps;
+import ru.amm.roboart.model.organizers.Organizer;
 
 public class DbHelper extends OrmLiteSqliteOpenHelper {
 
@@ -19,7 +20,8 @@ public class DbHelper extends OrmLiteSqliteOpenHelper {
     private Class[] dbClasses = new Class[]{
             Event.class,
             Category.class,
-            Maps.class};
+            Maps.class,
+            Organizer.class};
 
     private static final int DB_VERSION = 1;
 
