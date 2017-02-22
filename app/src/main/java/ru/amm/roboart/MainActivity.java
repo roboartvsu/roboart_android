@@ -12,7 +12,7 @@ import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
 
 import ru.amm.roboart.ui.about.AboutFragment;
-import ru.amm.roboart.ui.gift.GiftFragment;
+import ru.amm.roboart.ui.events.EventsFragment;
 import ru.amm.roboart.ui.maps.MapsFragment;
 
 public class MainActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
@@ -32,6 +32,9 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
+        //open default fragment
+        navigationView.getMenu().getItem(0).setChecked(true);
+        openFragment(EventsFragment.newInstance());
     }
 
     @Override
@@ -50,12 +53,9 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         int id = item.getItemId();
         Fragment fragment = null;
         if (id == R.id.nav_scheduler) {
-
+            fragment = EventsFragment.newInstance();
         } else if (id == R.id.nav_maps) {
             fragment = MapsFragment.newInstance();
-        } else if (id == R.id.nav_gift) {
-            fragment = GiftFragment.newInstance();
-
         } else if (id == R.id.nav_organizers) {
 
         } else if (id == R.id.nav_about) {

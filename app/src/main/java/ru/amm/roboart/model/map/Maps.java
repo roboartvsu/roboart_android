@@ -1,30 +1,19 @@
-package ru.amm.roboart.entity;
+package ru.amm.roboart.model.map;
 
+import com.j256.ormlite.field.DatabaseField;
+import com.j256.ormlite.table.DatabaseTable;
 
-import io.objectbox.annotation.Entity;
-import io.objectbox.annotation.Id;
-import io.objectbox.annotation.Generated;
-
-@Entity
+@DatabaseTable(tableName = "maps", daoClass = MapsDao.class)
 public class Maps {
 
-    @Id
+    @DatabaseField
     private long id;
 
+    @DatabaseField
     private String title;
 
+    @DatabaseField
     private String image;
-
-    @Generated(hash = 1002995087)
-    public Maps(long id, String title, String image) {
-        this.id = id;
-        this.title = title;
-        this.image = image;
-    }
-
-    @Generated(hash = 830892839)
-    public Maps() {
-    }
 
     public String getTitle() {
         return title;

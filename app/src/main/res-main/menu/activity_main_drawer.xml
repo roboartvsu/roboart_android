@@ -11,10 +11,6 @@
             android:icon="@drawable/ic_menu_gallery"
             android:title="Карты" />
         <item
-            android:id="@+id/nav_gift"
-            android:icon="@drawable/ic_menu_slideshow"
-            android:title="Подарок" />
-        <item
             android:id="@+id/nav_organizers"
             android:icon="@drawable/ic_menu_manage"
             android:title="Организаторы" />

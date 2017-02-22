@@ -12,10 +12,13 @@ import android.widget.Button;
 import com.agna.ferro.mvp.component.ScreenComponent;
 import com.agna.ferro.mvp.presenter.MvpPresenter;
 
+import java.sql.SQLException;
+
 import javax.inject.Inject;
 
 import ru.amm.roboart.R;
 import ru.amm.roboart.ui.base.fragment.BaseFragmentView;
+import timber.log.Timber;
 
 public class MapsFragment extends BaseFragmentView {
 
@@ -42,7 +45,11 @@ public class MapsFragment extends BaseFragmentView {
             @Override
             public void onClick(View v) {
                 //TODO  вынести загрузку карт с api на сплеш
-                presenter.getMaps();
+                try {
+                    presenter.getMaps();
+                } catch (SQLException e) {
+                    Timber.e(e,"");
+                }
             }
         });
 

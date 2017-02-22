@@ -3,37 +3,34 @@ package ru.amm.roboart.app;
 import android.app.Application;
 import android.support.v7.app.AppCompatDelegate;
 
-import io.objectbox.BoxStore;
+import com.facebook.stetho.Stetho;
+
 import ru.amm.roboart.BuildConfig;
 import ru.amm.roboart.app.dagger.AppComponent;
 import ru.amm.roboart.app.dagger.AppModule;
 import ru.amm.roboart.app.dagger.DaggerAppComponent;
-import ru.amm.roboart.entity.MyObjectBox;
 import ru.amm.roboart.interactor.common.network.NetworkModule;
 import timber.log.Timber;
 
 public class App extends Application {
 
-    public static final String BASE_URL = "http://private-75095-roboart.apiary-mock.com/";
+    public static final String BASE_URL = "http://139.59.157.166:8080/";
 
     private AppComponent appComponent;
-
-    private BoxStore boxStore;
 
     @Override
     public void onCreate() {
         super.onCreate();
-
-        boxStore = MyObjectBox.builder().androidContext(App.this).build();
         AppCompatDelegate.setCompatVectorFromResourcesEnabled(true);
         initInjector();
         initLogging();
+        Stetho.initializeWithDefaults(this);
     }
 
     private void initInjector() {
         appComponent = DaggerAppComponent.builder()
                 .appModule(new AppModule(this))
-                .networkModule(new NetworkModule(this,BASE_URL))
+                .networkModule(new NetworkModule(this, BASE_URL))
                 .build();
     }
 
@@ -47,9 +44,5 @@ public class App extends Application {
 
     public AppComponent getAppComponent() {
         return this.appComponent;
-    }
-
-    public BoxStore getBoxStore() {
-        return boxStore;
     }
 }
