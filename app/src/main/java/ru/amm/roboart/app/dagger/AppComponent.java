@@ -11,6 +11,7 @@ import ru.amm.roboart.interactor.common.scheduler.SchedulerModule;
 import ru.amm.roboart.interactor.common.scheduler.SchedulersProvider;
 import ru.amm.roboart.interactor.events.EventsInteractor;
 import ru.amm.roboart.interactor.maps.MapsInteractor;
+import ru.amm.roboart.interactor.organizers.OrganizersInteractor;
 import ru.amm.roboart.repository.RepositoryModule;
 import ru.amm.roboart.repository.StorageModule;
 import ru.amm.roboart.repository.event.EventsRepository;
@@ -36,4 +37,6 @@ public interface AppComponent {
     MapsInteractor mapsInteractor();
 
     EventsInteractor eventsInteractor();
+
+    OrganizersInteractor organizersInteractor();
 }

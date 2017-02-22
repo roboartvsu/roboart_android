@@ -14,6 +14,7 @@ import android.view.MenuItem;
 import ru.amm.roboart.ui.about.AboutFragment;
 import ru.amm.roboart.ui.events.EventsFragment;
 import ru.amm.roboart.ui.maps.MapsFragment;
+import ru.amm.roboart.ui.organizers.OrganizersFragment;
 
 public class MainActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
 
@@ -57,7 +58,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         } else if (id == R.id.nav_maps) {
             fragment = MapsFragment.newInstance();
         } else if (id == R.id.nav_organizers) {
-
+            fragment = OrganizersFragment.newInstance();
         } else if (id == R.id.nav_about) {
             fragment = AboutFragment.newInstance();
         }
