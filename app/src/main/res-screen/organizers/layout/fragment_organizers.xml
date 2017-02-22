@@ -24,8 +24,9 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Организаторы"
-                    android:textColor="@color/black" />
+                    android:text="@string/organizers_title"
+                    android:textColor="@color/black"
+                    android:textSize="16sp" />
 
                 <android.support.v7.widget.RecyclerView
                     android:id="@+id/organizers_list"
@@ -48,8 +49,9 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Генеральные партнеры"
-                    android:textColor="@color/black" />
+                    android:text="@string/main_partners_title"
+                    android:textColor="@color/black"
+                    android:textSize="16sp" />
 
                 <android.support.v7.widget.RecyclerView
                     android:id="@+id/main_partners_list"
@@ -72,8 +74,9 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Партнеры"
-                    android:textColor="@color/black" />
+                    android:text="@string/partners_title"
+                    android:textColor="@color/black"
+                    android:textSize="16sp" />
 
                 <android.support.v7.widget.RecyclerView
                     android:id="@+id/partners_list"
